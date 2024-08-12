@@ -29,7 +29,7 @@ class ProductController extends Controller
             }
         }
 
-        $paginated = $productQuery->paginate(40);
+        $paginated = $productQuery->paginate(40)->withQueryString();
 
         return ProductResource::collection($paginated);
     }
